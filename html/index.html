@@ -21,6 +21,9 @@
   </style>
 </head>
 <body>
+
+<!--Must be loaded lazily in the body for unknown reasons.-->
+<link rel="stylesheet" type="text/css" href="style.css">
 <div id="sim"></div>
 </body>
 <script>
@@ -68,7 +71,7 @@
   if ( language ) {
     javaProperties.push( 'javaws.user.language=' + language );
   }
-  if ( country.length>0 ) {
+  if ( country.length > 0 ) {
     javaProperties.push( 'javaws.user.country=' + country );
   }
 
