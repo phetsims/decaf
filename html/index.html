@@ -78,8 +78,9 @@
 
   const initOptions = { javaProperties: javaProperties };
 
+  // Filled in with an array on build
   const preloadResources = '{{PRELOAD_RESOURCES}}';
-  if (preloadResources.indexOf('{')===-1){
+  if ( Array.isArray( preloadResources ) ) {
     initOptions.preloadResources = preloadResources;
   }
 
