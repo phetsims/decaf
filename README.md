@@ -16,30 +16,14 @@ Please revise them accordingly to your platform.
 cd ~
 cp phet-svn-trunk-2020/simulations-java/simulations/{{PROJECT}}/deploy/{{PROJECT}}_all.jar apache-document-root/main/decaf/projects/{{PROJECT}}/
 cd apache-document-root/main/decaf/projects/{{PROJECT}}
-/Applications/cheerpj/cheerpjfy.py {{PROJECT}}_all.jar --pack-jar={{PROJECT}}_all_pack.jar 
+/Applications/cheerpj/cheerpjfy.py {{PROJECT}}_all.jar 
 
-## Proguard?
-See https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
+## Other optimizations?
+Proguard: See https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
+Pack jar: --pack-jar={{PROJECT}}_all_pack.jar
 
 ## Deployment
 Run the simulation to get the preloadResources via `cjGetRuntimeResources()`, see https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
 convert the outer quotes to single quotes, like grunt deploy-decaf --project=faraday --preloadResources='["/lt/runtime/rt.jar.java.util.function.js","/lt/runtime/rt.jar.jdk.js",...]'
 cd ~/apache-document-root/main/perennial/
 grunt deploy-decaf --project={{PROJECT}} --preloadResources={{PRELOAD_RESOURCES}}
-
-
-#EXAMPLE
-cd ~
-cp phet-svn-trunk-2020/simulations-java/simulations/faraday/deploy/faraday_all.jar apache-document-root/main/decaf/projects/faraday/
-cd apache-document-root/main/decaf/projects/faraday
-/Applications/cheerpj/cheerpjfy.py --pack-jar faraday_all.jar
-
-## Proguard?
-See https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
-
-## Deployment
-Commit changes to decaf repo
-Start VPN
-Run the simulation to get the preloadResources via `cjGetRuntimeResources()`, see https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
-cd apache-document-root/main/perennial/
-grunt deploy-decaf --project=faraday --preloadResources={{PRELOAD_RESOURCES}}
