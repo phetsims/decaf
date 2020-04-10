@@ -4,13 +4,16 @@ These instructions assume that the svn branch will be checked out to ~/phet-svn-
 checked out to ~/apache-document-root/main/ and that the cheerpjfy python script is located in /Applications/cheerpj/cheerpjfy.py.  
 Please revise them accordingly to your platform.
 
-## Build the Java Simulation
-
+## Set up to run PhET Build GUI
 1. Check out the svn branch "decaf"
-2. Launch the PhET Build GUI
-3. Select the sim
-4. Press test
-5. Exit the sim
+2. Use Java 1.8 OpenJDK
+3. Use the .idea project that comes with checkout, use Java 1.8 OpenJDK (like 1.8.0_241)
+
+## Build the Java Simulation
+1. Launch the PhET Build GUI
+2. Select the sim
+3. Press test
+4. Exit the sim
 
 ## Copy to decaf and run CheerpJ
 cd ~
