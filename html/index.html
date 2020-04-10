@@ -76,6 +76,11 @@
     javaProperties.push( 'javaws.user.country=' + country );
   }
 
+  javaProperties.push('cheerpj.globals.windowInnerWidth='+window.innerWidth);
+  javaProperties.push('cheerpj.globals.windowInnerHeight='+window.innerHeight);
+
+  console.log(javaProperties);
+
   const initOptions = { javaProperties: javaProperties };
 
   // Filled in with an array on build
@@ -209,6 +214,14 @@
       sendMessages();
     } )();
   }
+
+  window.addEventListener( 'resize', function() {
+    console.log( window.innerWidth, window.innerHeight );
+
+    /* Equivalent Java code: int returnVal = com.my.Java.package.myClass.method(argument1, argument2, argument3); */
+
+    cjCall("edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth,window.innerHeight);
+  } );
 
 </script>
 </html>
