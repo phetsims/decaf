@@ -30,3 +30,20 @@ Run the simulation to get the preloadResources via `cjGetRuntimeResources()`, se
 convert the outer quotes to single quotes, like grunt deploy-decaf --project=faraday --preloadResources='["/lt/runtime/rt.jar.java.util.function.js","/lt/runtime/rt.jar.jdk.js",...]'
 cd ~/apache-document-root/main/perennial/
 grunt deploy-decaf --project={{PROJECT}} --preloadResources={{PRELOAD_RESOURCES}}
+
+## Promote Dev version to production
+Log in to phet-server
+cd /data/web/static/phetsims/sims/cheerpj/
+mkdir {{PROJECT}}
+cd {{PROJECT}}
+scp -r phet-admin@bayes.colorado.edu:/data/web/htdocs/dev/decaf/{{PROJECT}}/{{VERSION}} .
+cd {{VERSION}}
+sudo chmod g+w *
+mv index.html {{PROJECT}}.html
+nano {{PROJECT}}.html
+
+change
+cheerpjRunJar( "/app/decaf/" + project
+cheerpjRunJar( "/app/sims/cheerpj/" + project
+
+Create or update /data/web/static/phetsims/sims/cheerpj/{{PROJECT}}/.htaccess to point to the new version
