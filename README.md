@@ -30,6 +30,7 @@ Run the simulation to get the preloadResources via `cjGetRuntimeResources()`, se
 convert the outer quotes to single quotes, like grunt deploy-decaf --project=faraday --preloadResources='["/lt/runtime/rt.jar.java.util.function.js","/lt/runtime/rt.jar.jdk.js",...]'
 cd ~/apache-document-root/main/perennial/
 grunt deploy-decaf --project={{PROJECT}} --preloadResources={{PRELOAD_RESOURCES}}
+put SVN revision #, chipper SHA and decaf SHA in dependencies.txt
 
 ## Promote Dev version to production
 Log in to phet-server
