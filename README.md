@@ -26,6 +26,7 @@ Proguard: See https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-opti
 Pack jar: --pack-jar={{PROJECT}}_all_pack.jar
 
 ## Deployment
+Commit the changes to decaf repo (jar and js file)
 Run the simulation to get the preloadResources via `cjGetRuntimeResources()`, see https://github.com/leaningtech/cheerpj-meta/wiki/Startup-time-optimization
 convert the outer quotes to single quotes, like grunt deploy-decaf --project=faraday --preloadResources='["/lt/runtime/rt.jar.java.util.function.js","/lt/runtime/rt.jar.jdk.js",...]'
 cd ~/apache-document-root/main/perennial/
@@ -48,3 +49,5 @@ cheerpjRunJar( "/app/decaf/" + project
 cheerpjRunJar( "/app/sims/cheerpj/" + project
 
 Create or update /data/web/static/phetsims/sims/cheerpj/{{PROJECT}}/.htaccess to point to the new version
+
+Share links with ?simulation=... query parameters.  Look in the Java project .properties file to list the simulations
