@@ -14,7 +14,7 @@ For the following commands, use --debug if something is wrong
 
 ## Build
 cd perennial
-grunt build-decaf --project=moving-man
+grunt build-decaf --project={{PROJECT}}
 
 ## Deploy dev (outputs a script to deploy production)
 cd ../decaf
@@ -22,7 +22,7 @@ git add *
 git commit -m "update version"
 git push
 cd ../perennial
-grunt deploy-decaf --project=moving-man --dev --production --username={{phet's bayes login username}}
+grunt deploy-decaf --project={{PROJECT}} --dev --production
 
 ## Deploy production
 run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
