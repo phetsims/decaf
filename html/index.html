@@ -82,10 +82,10 @@
 
   console.log(javaProperties);
 
-  const initOptions = { javaProperties: javaProperties };
+  var initOptions = { javaProperties: javaProperties };
 
   // Filled in with an array on build
-  const preloadResources = '{{PRELOAD_RESOURCES}}';
+  var preloadResources = '{{PRELOAD_RESOURCES}}';
   if ( Array.isArray( preloadResources ) ) {
     initOptions.preloadResources = preloadResources;
   }
@@ -95,11 +95,11 @@
   var div = document.getElementById( 'sim' );
   cheerpjCreateDisplay( -1, -1, div );
 
-  if ( IS_BUILT === 'true' ) {
+  if ( IS_BUILT === 'true' && !parsedQueryStrings.testLocalBuild ) {
     cheerpjRunJar( "/app/decaf/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
   }
   else {
-    cheerpjRunJar( "/app/main/decaf/projects/" + project + "/" + project + "_all.jar", "flavor", sim );
+    cheerpjRunJar( "/app/main/decaf/projects/" + project + "/build/" + project + "_all.jar", "flavor", sim );
   }
 
   if ( IS_BUILT === 'true' ) {
