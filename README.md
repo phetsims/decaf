@@ -23,4 +23,4 @@ grunt deploy-decaf --project=moving-man --dev --production --username={{phet's b
 ## Deploy production
 run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
 
-Share links with ?simulation=... query parameters.  Look in the Java project .properties file to list the simulations
+Share links with ?simulation=... query parameters.
