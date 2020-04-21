@@ -77,10 +77,10 @@
     javaProperties.push( 'javaws.user.country=' + country );
   }
 
-  javaProperties.push('cheerpj.globals.windowInnerWidth='+window.innerWidth);
-  javaProperties.push('cheerpj.globals.windowInnerHeight='+window.innerHeight);
+  javaProperties.push( 'cheerpj.globals.windowInnerWidth=' + window.innerWidth );
+  javaProperties.push( 'cheerpj.globals.windowInnerHeight=' + window.innerHeight );
 
-  console.log(javaProperties);
+  console.log( javaProperties );
 
   var initOptions = { javaProperties: javaProperties };
 
@@ -95,11 +95,14 @@
   var div = document.getElementById( 'sim' );
   cheerpjCreateDisplay( -1, -1, div );
 
-  if ( IS_BUILT === 'true' && !parsedQueryStrings.testLocalBuild ) {
+  if ( location.hostname === 'localhost' ) {
+    cheerpjRunJar( "/app/main/decaf/projects/" + project + "/build/" + project + "_all.jar", "flavor", sim );
+  }
+  else if ( location.hostname === 'phet-dev.colorado.edu' ) {
     cheerpjRunJar( "/app/decaf/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
   }
-  else {
-    cheerpjRunJar( "/app/main/decaf/projects/" + project + "/build/" + project + "_all.jar", "flavor", sim );
+  else if ( location.hostname === 'phet.colorado.edu' ) {
+    cheerpjRunJar( "/app/sims/cheerpj/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
   }
 
   if ( IS_BUILT === 'true' ) {
@@ -221,7 +224,7 @@
 
     /* Equivalent Java code: int returnVal = com.my.Java.package.myClass.method(argument1, argument2, argument3); */
 
-    cjCall("edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth,window.innerHeight);
+    cjCall( "edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth, window.innerHeight );
   } );
 
 </script>
