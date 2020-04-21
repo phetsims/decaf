@@ -28,3 +28,7 @@ grunt deploy-decaf --project={{PROJECT}} --dev --production
 run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
 
 Share links with ?simulation=... query parameters.
+
+## Batch build and deploy dev
+cd perennial
+./bin/decaf-build-and-deploy-dev.sh {{PROJECT}}
