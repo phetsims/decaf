@@ -10,12 +10,14 @@ Please revise them accordingly to your platform.
 3. Use the .idea project that comes with checkout, use Java 1.8 OpenJDK (like 1.8.0_241)
 4. Update the deployDecaf script to use your build command (from running BuildScript in IntelliJ)
 
+For the following commands, use --debug if something is wrong
+
 ## Build
 cd perennial
-grunt build-decaf --project=moving-man --debug
+grunt build-decaf --project=moving-man
 
 ## Deploy dev (outputs a script to deploy production)
-grunt deploy-decaf --project=moving-man --debug --dev --production --username={{phet's bayes login username}}
+grunt deploy-decaf --project=moving-man --dev --production --username={{phet's bayes login username}}
 
 ## Deploy production
 run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
