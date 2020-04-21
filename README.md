@@ -8,6 +8,7 @@ Please revise them accordingly to your platform.
 1. Check out the svn branch "decaf"
 2. Use Java 1.8 OpenJDK
 3. Use the .idea project that comes with checkout, use Java 1.8 OpenJDK (like 1.8.0_241)
+4. Update the deployDecaf script to use your build command (from running BuildScript in IntelliJ)
 
 ## Build
 cd perennial
