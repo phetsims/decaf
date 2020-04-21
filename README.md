@@ -16,9 +16,12 @@ For the following commands, use --debug if something is wrong
 cd perennial
 grunt build-decaf --project=moving-man
 
-
 ## Deploy dev (outputs a script to deploy production)
-push changes from above
+cd ../decaf
+git add *
+git commit -m "update version"
+git push
+cd ../perennial
 grunt deploy-decaf --project=moving-man --dev --production --username={{phet's bayes login username}}
 
 ## Deploy production
