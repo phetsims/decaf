@@ -6,8 +6,8 @@ Please revise them accordingly to your platform.
 
 ## Set up to run PhET Build GUI
 1. Check out the svn branch "decaf"
-2. Use Java 1.8 OpenJDK
-3. Use the .idea project that comes with checkout, use Java 1.8 OpenJDK (like 1.8.0_241)
+2. Use jdk1.7.0_80.jdk from Oracle
+3. Use the .idea project that comes with checkout
 4. Update the deployDecaf script to use your build command (from running BuildScript in IntelliJ)
 
 For the following commands, use --debug if something is wrong
