@@ -26,6 +26,7 @@
 <!--Must be loaded lazily in the body for unknown reasons.-->
 <link rel="stylesheet" type="text/css" href="style.css">
 <div id="sim"></div>
+
 </body>
 <script>
 
@@ -59,6 +60,26 @@
 
   if ( sim.indexOf( '{' ) === 0 ) {
     sim = parsedQueryStrings.simulation || 'faraday';
+  }
+
+  // See https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+  var initializeFixedWidth = function( width, height ) {
+    if ( windowWidth < width || windowHeight < height ) {
+
+      // One px could map to multiple physical pixels, depending on density, say, for a retina display
+      document.getElementById( 'sim' ).style.width = width + 'px';
+      document.getElementById( 'sim' ).style.height = height + '768';
+      document.body.style.width = width + 'px';
+      document.body.style.height = height + 'px';
+      document.body.style.position = 'static';
+    }
+  };
+
+  if ( project === 'discharge-lamps' ) {
+    initializeFixedWidth( 1024, 768 );
   }
 
   var language = locale;
@@ -220,12 +241,9 @@
   }
 
   window.addEventListener( 'resize', function() {
-    console.log( window.innerWidth, window.innerHeight );
 
     /* Equivalent Java code: int returnVal = com.my.Java.package.myClass.method(argument1, argument2, argument3); */
-
-    cjCall( "edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth, window.innerHeight );
+    // cjCall( "edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth, window.innerHeight );
   } );
-
 </script>
 </html>
