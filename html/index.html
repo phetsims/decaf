@@ -167,6 +167,10 @@
       console.log( 'analytics sending...' );
 
       var loadType = 'cheerpj';
+      if ( top !== self ) {
+        // Checks to see if this sim is embedded - phetsims/chipper#50
+        loadType = 'embedded';
+      }
 
       function sendMessages() {
         var pingParams = 'pingver=4&' +
