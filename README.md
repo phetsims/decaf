@@ -44,3 +44,4 @@ svn switch https://phet.unfuddle.com/svn/phet_svn/branches/decaf .
 svn status
 svn merge ^/trunk
 review and commit changes
+Deploy following above instructions
