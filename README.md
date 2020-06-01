@@ -34,3 +34,13 @@ Share links with ?simulation=... query parameters.
 ## Batch build and deploy dev
 cd perennial
 ./bin/decaf-build-and-deploy-dev.sh {{PROJECT}}
+
+## Deploying new translations
+cd ~/phet-svn-trunk-2020
+svn info
+svn switch ^/trunk
+svn update
+svn switch https://phet.unfuddle.com/svn/phet_svn/branches/decaf .
+svn status
+svn merge ^/trunk
+review and commit changes
