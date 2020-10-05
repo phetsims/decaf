@@ -31,9 +31,9 @@ run the script from the previous command, outputted after `SERVER SCRIPT TO PROM
 
 Share links with ?simulation=... query parameters.
 
-## Batch build and deploy dev
+## Batch build and deploy
 cd perennial
-./bin/decaf-build-and-deploy-dev.sh {{PROJECT}}
+./bin/decaf-build-and-deploy.sh {{PROJECT}}
 
 ## Deploying new translations
 cd ~/phet-svn-trunk-2020
