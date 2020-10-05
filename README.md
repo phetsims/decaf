@@ -1,5 +1,9 @@
 # Decaf
 
+
+## Install CheerpJ
+1. This process has been tested with CheerpJ 2.1
+
 ## Set up SVN repo for Java development:
 1. svn checkout https://phet.unfuddle.com/svn/phet_svn/trunk ~/phet-svn-trunk-2020
 2. Download and install jdk1.7.0_80.jdk from Oracle
