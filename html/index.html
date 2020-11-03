@@ -137,8 +137,10 @@
   var div = document.getElementById( 'sim' );
   cheerpjCreateDisplay( -1, -1, div );
 
+  // Additional path can be supplied to match directory structure for local testing.
+  var path = '';
   if ( location.hostname === 'localhost' ) {
-    cheerpjRunJar( "/app/main/decaf/projects/" + project + "/build/" + project + "_all.jar", "flavor", sim );
+    cheerpjRunJar( `/app/${path}decaf/projects/${project}/build/${project}_all.jar`, "flavor", sim );
   }
   else if ( location.hostname === 'phet-dev.colorado.edu' ) {
     cheerpjRunJar( "/app/decaf/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
