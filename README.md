@@ -51,7 +51,7 @@ grunt deploy-decaf --project={{PROJECT}} --dev --production
 ```
 
 ## Deploy production
-Run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
+Using phet-admin credentials, run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
 Test launching the sim from the sim page.
 
 ## Batch build and deploy
