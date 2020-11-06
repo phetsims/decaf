@@ -14,8 +14,17 @@
     ```
     
 These instructions assume that the svn branch will be checked out to `~/phet-svn-trunk-2020/` and the build output path is `~/phet-svn-trunk-2020-output/`
-and that the cheerpjfy python script is located in /Applications/cheerpj/cheerpjfy.py.  
+and that the cheerpjfy python script is located in /Applications/cheerpj/cheerpjfy.py.
 Please revise them accordingly to your platform.
+
+## Set up build-local.json
+In `.phet/build-local.json` you will need to add these entries: 
+```
+"gitRoot":"/path/to/git/root",
+"decafTrunkPath": "path/to/trunk",
+"decafTrunkOutputPath": "path/to/trunk/output"
+"urlRoot": "localHostURL"
+```
 
 ## Set up to run PhET Build GUI
 For the following commands, use --debug if something is wrong
@@ -42,9 +51,8 @@ grunt deploy-decaf --project={{PROJECT}} --dev --production
 ```
 
 ## Deploy production
-run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
-
-Share links with ?simulation=... query parameters.
+Run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
+Test launching the sim from the sim page.
 
 ## Batch build and deploy
 cd perennial
