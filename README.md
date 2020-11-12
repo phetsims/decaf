@@ -22,7 +22,7 @@ In `.phet/build-local.json` you will need to add these entries:
 ```
 "gitRoot":"/path/to/git/root",
 "decafTrunkPath": "path/to/trunk",
-"decafTrunkOutputPath": "path/to/trunk/output"
+"decafTrunkOutputPath": "path/to/trunk/output",
 "urlRoot": "localHostURL"
 ```
 
