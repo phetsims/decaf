@@ -14,7 +14,7 @@
     ```
     
 These instructions assume that the svn branch will be checked out to `~/phet-svn-trunk-2020/` and the build output path is `~/phet-svn-trunk-2020-output/`
-and that the cheerpjfy python script is located in /Applications/cheerpj/cheerpjfy.py.
+and that the cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`.
 Please revise them accordingly to your platform.
 
 ## Set up build-local.json
