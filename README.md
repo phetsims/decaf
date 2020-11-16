@@ -1,21 +1,24 @@
 # Decaf
 
-
 ## Install CheerpJ
 1. This process has been tested with CheerpJ 2.1
 
 ## Set up SVN repo for Java development:
 1. svn checkout https://phet.unfuddle.com/svn/phet_svn/trunk ~/phet-svn-trunk-2020
 2. Download and install jdk1.7.0_80.jdk from Oracle
-3. Open a new IntelliJ project pointed at the root of the checkout (uses .idea structure)
-4. Check out the branch named "decaf".  This can be done with IDEA.
+3. Check out the branch named "decaf".
     ```
     svn checkout https://phet.unfuddle.com/svn/phet_svn/branches/decaf ~/phet-svn-trunk-2020
     ```
+4. Compile the phet java BuildScript *.class files.
+
+```
+cd build-tools/
+chmod u+x ./contrib/apache-ant/bin/ant
+./build.sh
+```
     
-These instructions assume that the svn branch will be checked out to `~/phet-svn-trunk-2020/` and the build output path is `~/phet-svn-trunk-2020-output/`
-and that the cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`.
-Please revise them accordingly to your platform.
+These instructions assume cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`.
 
 ## Set up build-local.json
 In `.phet/build-local.json` you will need to add these entries: 
