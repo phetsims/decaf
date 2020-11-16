@@ -138,7 +138,8 @@
   cheerpjCreateDisplay( -1, -1, div );
 
   // Additional path can be supplied to match directory structure for local testing.
-  var path = '';
+  const path = location.pathname.indexOf( '/main/decaf/' ) === 0 ? 'main/' : ''
+
   if ( location.hostname === 'localhost' ) {
     cheerpjRunJar( `/app/${path}decaf/projects/${project}/build/${project}_all.jar`, "flavor", sim );
   }
