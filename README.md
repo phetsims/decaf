@@ -15,10 +15,17 @@
 ```
 cd build-tools/
 chmod u+x ./contrib/apache-ant/bin/ant
+```
+
+5. Target the installed JDK by setting the `JAVA_HOME` env variable
+```
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/
 ./build.sh
 ```
+
+6. At this point a PhET Build GUI will launch and can be closed.
     
-These instructions assume cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`.
+These instructions assume cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`. This instruction set also assumes your `localhost` is running.
 
 ## Set up build-local.json
 In `.phet/build-local.json` you will need to add these entries: 
@@ -47,7 +54,7 @@ This can be done by going to Security and Privacy settings and allowing access f
 ```
 cd ../decaf
 git add *
-git commit -m "update version"
+git commit -m "Update version"
 git push
 cd ../perennial
 grunt deploy-decaf --project={{PROJECT}} --dev --production
