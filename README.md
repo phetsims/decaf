@@ -52,20 +52,16 @@ This can be done by going to Security and Privacy settings and allowing access f
 
 ## Deploy dev (outputs a script to deploy production)
 ```
-cd perennial
-grunt build-decaf --project=electric-hockey
 cd ../decaf
 git add *
 git commit -m "Update version"
 git push
 cd ../perennial
-grunt deploy-decaf --project=electric-hockey --dev --production
-
-
+grunt deploy-decaf --project={{PROJECT}} --dev --production
 ```
 
 ## Deploy production
-Using phet-admin credentials, run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
+Using your personal login credentials, run the script from the previous command, outputted after `SERVER SCRIPT TO PROMOTE DEV VERSION TO PRODUCTION VERSION`
 Test launching the sim from the sim page.
 
 ## Batch build and deploy
