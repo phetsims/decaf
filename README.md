@@ -57,7 +57,9 @@ git add *
 git commit -m "Update version"
 git push
 cd ../perennial
-grunt deploy-decaf --project={{PROJECT}} --dev --production
+grunt deploy-decaf --project=discharge-lamps --dev --production
+
+
 ```
 
 ## Deploy production
