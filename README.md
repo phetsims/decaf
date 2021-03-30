@@ -4,13 +4,12 @@
 1. This process has been tested with CheerpJ 2.1
 
 ## Set up SVN repo for Java development:
-1. svn checkout https://phet.unfuddle.com/svn/phet_svn/trunk ~/phet-svn-trunk-2020
-2. Download and install jdk1.7.0_80.jdk from Oracle
-3. Check out the branch named "decaf".
+1. Download and install jdk1.7.0_80.jdk from Oracle
+2. Check out the SVN truck branch named "decaf" (can be done in-place on an existing checkout).
     ```
     svn checkout https://phet.unfuddle.com/svn/phet_svn/branches/decaf ~/phet-svn-trunk-2020
     ```
-4. Compile the phet java BuildScript *.class files.
+3. Compile the phet java BuildScript *.class files.
 
 ```
 cd build-tools/
@@ -51,6 +50,9 @@ Note: The first time the Build steps are run on macOS, you will need to grant se
 This can be done by going to Security and Privacy settings and allowing access from the prompt under "Allow apps downloaded from: ". 
 
 ## Deploy dev (outputs a script to deploy production)
+
+The deploy step requires VPN.
+
 ```
 cd ../decaf
 git add *
