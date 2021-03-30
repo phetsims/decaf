@@ -16,13 +16,13 @@ cd build-tools/
 chmod u+x ./contrib/apache-ant/bin/ant
 ```
 
-5. Target the installed JDK by setting the `JAVA_HOME` env variable
+4. Target the installed JDK by setting the `JAVA_HOME` env variable
 ```
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/
 ./build.sh
 ```
 
-6. At this point a PhET Build GUI will launch and can be closed.
+5. At this point a PhET Build GUI will launch and can be closed.
     
 These instructions assume cheerpjfy python script is located in `/Applications/cheerpj/cheerpjfy.py`. This instruction set also assumes your `localhost` is running.
 
