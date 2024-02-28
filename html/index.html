@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>PhET Simulation</title>
-  <script src="https://cjrt.leaningtech.com/20200409_2/loader.js"></script>
+  <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
   <style type="text/css">
     #sim {
       width: 100vw;
@@ -29,6 +29,8 @@
 
 </body>
 <script>
+
+  ( async () => {
 
   // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
   var getQueryStringParams = function( query ) {
@@ -132,22 +134,23 @@
     initOptions.preloadResources = preloadResources;
   }
 
-  cheerpjInit( initOptions );
+    await cheerpjInit( initOptions );
 
   var div = document.getElementById( 'sim' );
+
   cheerpjCreateDisplay( -1, -1, div );
 
   // Additional path can be supplied to match directory structure for local testing.
   const path = location.pathname.indexOf( '/main/decaf/' ) === 0 ? 'main/' : ''
 
   if ( location.hostname === 'localhost' ) {
-    cheerpjRunJar( `/app/${path}decaf/projects/${project}/build/${project}_all.jar`, "flavor", sim );
+    await cheerpjRunJar( `/app/${path}decaf/projects/${project}/build/${project}_all.jar`, 'flavor', sim );
   }
   else if ( location.hostname === 'phet-dev.colorado.edu' ) {
-    cheerpjRunJar( "/app/decaf/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
+    await cheerpjRunJar( '/app/decaf/' + project + '/{{VERSION}}/' + project + '_all.jar', 'flavor', sim );
   }
   else if ( location.hostname === 'phet.colorado.edu' ) {
-    cheerpjRunJar( "/app/sims/cheerpj/" + project + "/{{VERSION}}/" + project + "_all.jar", "flavor", sim );
+    await cheerpjRunJar( '/app/sims/cheerpj/' + project + '/{{VERSION}}/' + project + '_all.jar', 'flavor', sim );
   }
 
   if ( IS_BUILT === 'true' ) {
@@ -273,5 +276,8 @@
     /* Equivalent Java code: int returnVal = com.my.Java.package.myClass.method(argument1, argument2, argument3); */
     // cjCall( "edu.colorado.phet.common.phetcommon.view.PhetFrame", "browserWindowResize", window.innerWidth, window.innerHeight );
   } );
+
+  } )();
+
 </script>
 </html>
