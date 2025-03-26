@@ -1,7 +1,7 @@
 # Decaf
 
-PhET maintains support for Java simulations through a commercial product called CheerpJ. This document outlines the
-process for building and deploying Java simulations.
+PhET maintains support for Java simulations through a commercial product called CheerpJ, which allows Java code to run
+in an HTML5 page. This document outlines the process for building and deploying Java simulations.
 
 ## Install CheerpJ
 
